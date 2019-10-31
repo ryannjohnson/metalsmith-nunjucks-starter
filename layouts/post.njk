@@ -1,0 +1,11 @@
+{% extends 'default.njk' %}
+
+{% block main %}
+  <article>
+    <header>
+      <h1>{{ title | escape }}</h1>
+      <time datetime="{{ date | date('YYYY-MM-DD') }}">{{ date | date("MMMM D, YYYY") }}</time>
+    </header>
+    {{ contents | safe }}
+  </article>
+{% endblock %}

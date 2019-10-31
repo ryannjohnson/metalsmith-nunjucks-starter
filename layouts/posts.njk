@@ -1,0 +1,16 @@
+{% extends 'default.njk' %}
+
+{% block main %}
+  <header>
+    <h1>{{ title | escape }}</h1>
+  </header>
+  {{ contents | safe }}
+  <ul>
+    {% for post in posts | sortByKey('date') | reverse %}
+      <li>
+        <time datetime="{{ post.date | date("YYYY-MM-DD") }}T00:00:00Z">{{ post.date | date("YYYY-MM-DD") }}</time>
+        <a href="/{{ post.path }}/">{{ post.title | escape }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+{% endblock %}
