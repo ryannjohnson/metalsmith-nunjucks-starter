@@ -26,7 +26,7 @@ metalsmith(__dirname)
       langPrefix: "hljs lang-",
     }),
   )
-  .use(posts)
+  .use(posts({ prefix: 'writing' }))
   .use(permalinks())
   .use(layouts({ engineOptions: { filters } }))
   .use(htmlMinifier())

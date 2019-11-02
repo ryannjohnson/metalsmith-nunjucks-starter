@@ -6,7 +6,7 @@
   </header>
   {{ contents | safe }}
   <ul>
-    {% for post in posts | sortByKey('date') | reverse %}
+    {% for post in posts[postsPrefix] | sortByKey('date') | reverse %}
       <li>
         <time datetime="{{ post.date | date("YYYY-MM-DD") }}T00:00:00Z">{{ post.date | date("YYYY-MM-DD") }}</time>
         <a href="/{{ post.path }}/">{{ post.title | escape }}</a>

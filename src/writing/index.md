@@ -1,6 +1,7 @@
 ---
 layout: posts.njk
-title: Posts
+postsPrefix: writing
+title: Writing
 ---
 
 Markdown content can go here.
